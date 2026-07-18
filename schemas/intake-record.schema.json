@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/NaClYen/agent-capability-intake/schemas/intake-record.schema.json",
+  "title": "Agent capability intake record",
+  "type": "object",
+  "required": [
+    "id",
+    "status",
+    "source_type",
+    "risk_tier",
+    "source",
+    "reviewed_at",
+    "disposition"
+  ],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "status": {
+      "enum": ["discovered", "digested", "active", "closed", "quarantined", "retired"]
+    },
+    "source_type": {
+      "enum": ["skill", "prompt", "instruction", "agent", "hook", "mcp", "plugin", "cli", "package", "template"]
+    },
+    "risk_tier": { "enum": ["low", "medium", "high", "critical"] },
+    "source": {
+      "type": "object",
+      "required": ["url", "publisher"],
+      "properties": {
+        "url": { "type": "string", "format": "uri" },
+        "publisher": { "type": "string", "minLength": 1 },
+        "immutable_identity": { "type": "string" },
+        "license": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "reviewed_at": { "type": "string", "format": "date" },
+    "review_after": { "type": "string" },
+    "disposition": { "enum": ["absorb", "no-absorb", "quarantine"] },
+    "local_target": { "type": "string" },
+    "verification": { "type": "string" },
+    "rollback": { "type": "string" },
+    "rationale": { "type": "string", "minLength": 1 }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "disposition": { "const": "absorb" } } },
+      "then": { "required": ["local_target", "verification", "rollback"] }
+    }
+  ],
+  "additionalProperties": false
+}

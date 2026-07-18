@@ -1,0 +1,19 @@
+{
+  "id": "markdown-lint-skill-2026-07",
+  "status": "active",
+  "source_type": "skill",
+  "risk_tier": "medium",
+  "source": {
+    "url": "https://example.org/skills/markdown-lint",
+    "publisher": "Example Maintainers",
+    "immutable_identity": "git:0123456789abcdef",
+    "license": "MIT"
+  },
+  "reviewed_at": "2026-07-18",
+  "review_after": "on upstream security update or runtime migration",
+  "disposition": "absorb",
+  "local_target": "repository-local skill directory",
+  "verification": "Run the skill against a fixture with one known Markdown error; expect one finding and no file mutation.",
+  "rollback": "Remove the local materialization and confirm it is no longer discovered.",
+  "rationale": "A repeated documentation quality need justified a read-only local rewrite. The upstream install script and telemetry instructions were intentionally excluded."
+}

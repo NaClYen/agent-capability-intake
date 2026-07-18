@@ -1,0 +1,16 @@
+{
+  "id": "broad-repository-mcp-2026-07",
+  "status": "closed",
+  "source_type": "mcp",
+  "risk_tier": "high",
+  "source": {
+    "url": "https://example.org/mcp/repository-indexer",
+    "publisher": "Example Publisher",
+    "immutable_identity": "release:2.4.1 sha256:example",
+    "license": "Apache-2.0"
+  },
+  "reviewed_at": "2026-07-18",
+  "review_after": "Only if a project requires its unique capability with a bounded repository root.",
+  "disposition": "no-absorb",
+  "rationale": "The server requires broad filesystem indexing and network access, while existing local retrieval covers the current need. No installation or runtime configuration was performed."
+}
