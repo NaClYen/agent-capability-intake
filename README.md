@@ -1,5 +1,7 @@
 # Agent Capability Intake
 
+[English](README.md) · [繁體中文](i18n/zh-Hant/README.md) · [日本語](i18n/ja/README.md)
+
 An evidence-first governance kit for deciding whether an external AI-agent capability may enter a local environment.
 
 It treats a skill, prompt, hook, MCP server, plugin, agent, CLI wrapper, or runtime package as **untrusted until reviewed**. The central rule is simple:
@@ -53,6 +55,7 @@ It is deliberately not a package manager, a runtime sandbox, a security scanner,
 - [`schemas/intake-record.schema.json`](schemas/intake-record.schema.json) — portable machine-readable record shape.
 - [`templates/`](templates/) — Markdown records for human review.
 - [`examples/`](examples/) — a safe absorption decision and a documented decline.
+- [`i18n/`](i18n/README.md) — translation layout and maintenance rules.
 
 ## Status
 
