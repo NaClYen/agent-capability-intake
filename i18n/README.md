@@ -4,8 +4,8 @@ The English files in the repository root are the normative source. Localized doc
 
 Current locales:
 
-- [`zh-Hant`](zh-Hant/README.md) — Traditional Chinese
-- [`ja`](ja/README.md) — Japanese
+- [`zh-Hant README`](zh-Hant/README.md) · [`Guide`](zh-Hant/GUIDE.md) — Traditional Chinese
+- [`ja README`](ja/README.md) · [`Guide`](ja/GUIDE.md) — Japanese
 
 ## Maintaining a translation
 

@@ -2,6 +2,10 @@
 
 [English](README.md) · [繁體中文](i18n/zh-Hant/README.md) · [日本語](i18n/ja/README.md)
 
+> **A direction, not a runbook.**
+>
+> This repository gives people and AI agents a model for reasoning about external agent capabilities. It does not prescribe every step, runtime, or implementation. Start with [GUIDE.md](GUIDE.md), then read only the next document your question needs.
+
 An evidence-first governance kit for deciding whether an external AI-agent capability may enter a local environment.
 
 It treats a skill, prompt, hook, MCP server, plugin, agent, CLI wrapper, or runtime package as **untrusted until reviewed**. The central rule is simple:
@@ -65,6 +69,7 @@ It is deliberately not a package manager, a runtime sandbox, a security scanner,
 
 ## Repository map
 
+- [`GUIDE.md`](GUIDE.md) — a concise reading map for people and agents.
 - [`SPEC.md`](SPEC.md) — state model, decision gate, and minimum evidence.
 - [`schemas/intake-record.schema.json`](schemas/intake-record.schema.json) — portable machine-readable record shape.
 - [`templates/`](templates/) — Markdown records for human review.

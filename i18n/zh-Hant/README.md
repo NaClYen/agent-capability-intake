@@ -2,6 +2,10 @@
 
 [English](../../README.md) · [繁體中文](README.md) · [日本語](../ja/README.md)
 
+> **提供方向，而非操作手冊。**
+>
+> 這個儲存庫提供人與 AI 代理思考外來代理能力時可依循的模型；它不規定每一步、執行環境或實作方式。先讀 [GUIDE.md](GUIDE.md)，再只閱讀眼前問題所需的下一份文件。
+
 這是一套以證據為先的治理工具組，用來判斷外來 AI 代理能力是否應進入本機環境。
 
 它把技能、提示詞、掛鉤、MCP 伺服器、外掛程式、代理、CLI 包裝器與執行階段套件視為**在完成審查前一律不可信**的來源。核心流程很簡單：
@@ -65,6 +69,7 @@ external source -> digest -> absorb | no-absorb
 
 ## 儲存庫結構
 
+- [`GUIDE.md`](GUIDE.md) — 供人與代理快速選擇閱讀路徑的地圖。
 - [`SPEC.md`](../../SPEC.md) — 狀態模型、決策關卡與最低證據要求。
 - [`schemas/intake-record.schema.json`](../../schemas/intake-record.schema.json) — 可攜、供機器讀取的紀錄格式。
 - [`templates/`](../../templates/) — 供人工審查使用的 Markdown 紀錄。
