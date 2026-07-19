@@ -28,6 +28,20 @@ external source -> digest -> absorb | no-absorb
 - `no-absorb` 決策必須可被找到，避免同一來源反覆被重新研究。
 - 自動化可以檢查紀錄，但不能自行把來源升格為已啟用狀態。
 
+## 能力發現與分層載入
+
+即使能力已獲核准，若每個任務都載入所有規則與參考資料，仍會形成上下文負擔。能力如何被發現與何時載入，也應是啟用設計的一部分。
+
+1. **常駐契約**：全域或儲存庫指示應保持精簡，只寫權限邊界、完成規則，以及何時需要進一步閱讀的觸發條件。
+2. **能力目錄**：在能力尚未相關前，只公開技能的名稱與簡短說明。說明是路由介面，不是規則手冊，也不是安全決策。
+3. **已選取的技能**：只在選取後載入完整 `SKILL.md`。內容應寫明工作流程契約、安全邊界，以及下一步可能需要閱讀的資料地圖。
+4. **參考資料**：只在明確觸發條件成立時閱讀個別參考文件。跨技能的政策放在穩定、共用的 `references/` 區域；工作流程專屬細節則放在技能旁。
+5. **指令稿與範本**：讓已選取的技能可以使用它們，但不要把內容注入成每回合都存在的指示。
+
+不要從頂層指示檔遞迴引入冗長的參考樹。有些執行環境會急切串接被引入的指示檔，反而破壞按需載入。相關性比對可以選取技能，卻不能授權安裝、預先核准工具或啟用能力。
+
+現有實作雖有差異，但 [Codex](https://developers.openai.com/codex/codex-manual.md#customization-and-tooling)、[Claude Code](https://code.claude.com/docs/en/slash-commands) 與 [GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-skills) 都有區分能力目錄中繼資料、已選取指示與按需資料的機制。[Gemini CLI](https://geminicli.com/docs/cli/gemini-md/) 則是有用的對照：它會在每次 prompt 串接階層上下文檔，因此這類檔案更必須保持精簡。
+
 ## 快速開始
 
 1. 從 [`templates/intake-record.md`](../../templates/intake-record.md) 建立引進評估紀錄。

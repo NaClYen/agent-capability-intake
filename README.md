@@ -28,6 +28,20 @@ This kit separates three actions that are often accidentally collapsed:
 - `no-absorb` decisions remain discoverable so the same source is not repeatedly re-investigated.
 - Automation can validate records; it must not silently promote a source to active.
 
+## Capability discovery and layered loading
+
+An approved capability can still create context debt if every rule and reference is loaded for every task. Treat discovery and loading as part of the activation design.
+
+1. **Always-on contract** — keep global or repository instructions thin: authority boundaries, completion rules, and the triggers that require a deeper read.
+2. **Capability catalog** — expose only a skill's name and short description until it is relevant. The description is a routing interface, not a rulebook or a security decision.
+3. **Selected skill** — load the full `SKILL.md` only after selection. It should state the workflow contract, safety boundary, and a direct map to the material that may be needed next.
+4. **References** — read an individual reference only when its explicit trigger applies. Put cross-skill policy in a stable shared `references/` area; keep workflow-specific detail beside the skill.
+5. **Scripts and templates** — make these available to the selected skill, but do not inject their contents as standing instructions.
+
+Do not recursively include long reference trees from a top-level instruction file. Some runtimes concatenate imported instruction files eagerly, which defeats progressive loading. A relevance match may select a skill; it never authorizes installation, tool pre-approval, or activation.
+
+Current implementations differ, but the distinction between catalog metadata, selected instructions, and on-demand material is documented by [Codex](https://developers.openai.com/codex/codex-manual.md#customization-and-tooling), [Claude Code](https://code.claude.com/docs/en/slash-commands), and [GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-skills). [Gemini CLI](https://geminicli.com/docs/cli/gemini-md/) is a useful counterexample: its hierarchical context files are concatenated for each prompt, so they must remain especially small.
+
 ## Quick start
 
 1. Create an intake record from [`templates/intake-record.md`](templates/intake-record.md).
