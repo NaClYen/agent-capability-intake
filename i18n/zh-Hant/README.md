@@ -55,7 +55,7 @@ external source -> digest -> absorb | no-absorb
    - [`no-absorb`](../../templates/no-absorb-decision.md)
    - 若有需要阻止使用的實質安全疑慮，選擇 `quarantine`。
 4. 若選擇 `absorb`，在改動執行階段前先寫下通過／失敗的檢查與復原方式。
-5. 把紀錄放到團隊認定為正式依據的能力登記表或決策紀錄旁。
+5. 把紀錄放到團隊認定為正式依據的能力登記表或決策紀錄旁。Obsidian vault 可以是其中一種載體；這套工具組不依賴它。
 
 ## 適用範圍
 

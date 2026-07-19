@@ -55,7 +55,7 @@ Current implementations differ, but the distinction between catalog metadata, se
    - [`no-absorb`](templates/no-absorb-decision.md)
    - `quarantine` when a material safety concern must block use.
 4. For `absorb`, define pass/fail checks and rollback before changing a runtime.
-5. Store the record beside the capability registry or decision log your team treats as authoritative.
+5. Store the record beside the capability registry or decision log your team treats as authoritative. An Obsidian vault can be one such home; this kit does not depend on it.
 
 ## Scope
 
